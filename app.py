@@ -97,7 +97,9 @@ class MaxStream():
 if __name__ == "__main__":
     listener = MaxListener()
 
-    stream = MaxStream(auth, listener)
-    stream.start(['abuse sexually', 'sexual abuse'])
+    #stream = MaxStream(auth, listener)
+    #stream.start(['abuse sexually', 'sexual abuse'])
 
-
+#direct_messages = api.list_direct_message(count=100, cursor=-1)
+direct_messages = api.get_direct_message(id=384760732-1149202744353480704, full_text=True)
+print(type(direct_messages))

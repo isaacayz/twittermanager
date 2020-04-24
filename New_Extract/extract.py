@@ -69,21 +69,21 @@ emoticons = emoticons_happy.union(emoticons_sad)
 def clean_tweets(tweet): 
     stop_words = set(stopwords.words('english'))
     word_tokens = word_tokenize(tweet)
-#after tweepy preprocessing the colon symbol left remain after      #removing mentions
+    #after tweepy preprocessing the colon symbol left remain after      #removing mentions
     tweet = re.sub(r':', '', tweet)
     tweet = re.sub(r'‚Ä¶', '', tweet)
-#replace consecutive non-ASCII characters with a space
+    #replace consecutive non-ASCII characters with a space
     tweet = re.sub(r'[^\x00-\x7F]+',' ', tweet)
-#remove emojis from tweet
+    #remove emojis from tweet
     tweet = emoji_pattern.sub(r'', tweet)
-#drop tweets outside nigeria
+    #drop tweets outside nigeria
     tweet = re.findall(r'[\w\.-]+Nigeria[\w\.-]+', tweet)
-#filter using NLTK library append it to a string
+    #filter using NLTK library append it to a string
     filtered_tweet = [w for w in word_tokens if not w in stop_words]
     filtered_tweet = []
-#looping through conditions
+    #looping through conditions
     for w in word_tokens:
-#check tokens against stop words , emoticons and punctuations
+    #check tokens against stop words , emoticons and punctuations
         if w not in stop_words and w not in emoticons and w not in string.punctuation:
             filtered_tweet.append(w)
     return ' '.join(filtered_tweet)
@@ -166,7 +166,9 @@ sexual_harrassment_keywords = '#abusesexually OR #sexualabuse OR #sexualabuse OR
 #call method
 #write_tweets(sexual_harrassment_keywords, sexual_harrass_tweets)
 
-while True: 
+"""while True: 
     write_tweets(sexual_harrassment_keywords, sexual_harrass_tweets)
     print("Writing data...")
-    time.sleep(30)
+    time.sleep(30)"""
+
+

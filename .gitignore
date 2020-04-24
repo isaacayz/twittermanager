@@ -1,2 +1,5 @@
 keys.py
-**keys.py
+*.keys.py
+**/__pycache__
+**/files
+**/test_read
